@@ -41,18 +41,13 @@ def create_db_connection(host_name, user_name, user_password, db_name):
 
 
 
-def create_database(connection, name, use= False):
+def create_database(connection, name):
     cursor = connection.cursor()
     try:
         cursor.execute(f"CREATE DATABASE {name};")
         cursor.close()
         cursor = connection.cursor()
-        if use:
-            cursor.execte(f"use {name};")
-            use = False
-            print(f"\n\nDatabase '{name}' created and connected successfully\n\n")
-        else:
-            print(f"\n\nDatabase '{name}' created successfully\n\n")
+        print(f"\n\nDatabase '{name}' created successfully\n\n")
     except Error as err:
         print(f"\n\nError in create_database:\n'{err}'\n\n")
 
