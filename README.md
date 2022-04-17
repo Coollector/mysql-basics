@@ -52,18 +52,18 @@ connection = database.create_db_connection(host_name, user_name, user_password, 
 ```
 
 
-**create_database(connection, name, use= False)**
+**create_database(connection, name)**
 
 **_requires you to create a connection first_**
 
-*enter your connection, your new database name and add a third parameter True if you directly want to connect to this database*
+*enter your connection and your new database name*
 
 ```python
 from utils import database
 
 connection = database.create_server_connection(host_name, user_name, user_password)
 
-database.create_database(connection, 'test', True)
+database.create_database(connection, 'test')
 ```
 
 
